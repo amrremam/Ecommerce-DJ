@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'emart',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
