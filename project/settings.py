@@ -12,8 +12,6 @@ DEBUG = config('DEBUG')
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -23,10 +21,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'emart',
     'account',
+    'order',
     'rest_framework',
     'django_filters',
     'rest_framework_simplejwt'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,6 +82,13 @@ SIMPLE_JWT = {
     'AUTH_TOKEN_CLASSES': 'rest_framework_simplejwt.tokens.AccessToken',
 }
 
+
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
